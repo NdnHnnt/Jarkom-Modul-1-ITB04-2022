@@ -94,9 +94,9 @@ Topik Tugas Akhir: Evaluasi Unjuk Kerja User Space Filesystem
 `576	43.664770386	192.168.0.27	103.94.189.5	HTTP	1393	GET /index.php/topik/detailTopik/194 HTTP/1.1` <br>
 2) Dapat diketahui bahwa alamat yang dikunjungi adalah [http://monta.if.its.ac.id/index.php/topik/detailTopik/194](http://monta.if.its.ac.id/index.php/topik/detailTopik/194) <br>
 3) Tampilan dari ss-nya adalah <br>
-   ![LamanDetailTopik](/image/Soal2-a.PNG)<br>
+   ![LamanDetailTopik](/image/soal2-a.PNG)<br>
 4) Karena title yang ada di bagian atas sepertinya bukan merupakan judul, kemungkinan besar judulnya adalah <br> “Topik Tugas Akhir: Evaluasi Unjuk Kerja User Space Filesystem”. Ditambah dengan deskripsi yang mengarah pada FUSE. <br>
-   ![PembuktianLaman](/image/Soal2-b.PNG)<br> 
+   ![PembuktianLaman](/image/soal2-b.PNG)<br> 
 
 
 
@@ -110,7 +110,7 @@ Filter sehingga wireshark hanya menampilkan paket yang menuju port 80!
 wireshark filter expression( tcp.dstport == 80 || udp.dstport == 80)
 
 ### Penyelesaian dan Dokumentasi Soal 3
-![FilterPaketNomor3](/image/Soal3.PNG)<br>
+![FilterPaketNomor3](/image/soal3.PNG)<br>
 Penjelasan : <br>
 disini kita disuruh untuk memfilter whileshark  sehingga hanya menampilkan paket yang menuju port 80, <br>
 Disini kita menggunakan filter expression yaitu tcp.dstport == 80 || udp.dstport == 80 agar hanya menampilkan paket yang menuju port 80. <br>
@@ -126,7 +126,7 @@ Filter sehingga wireshark hanya mengambil paket yang berasal dari port 21!
 Wireshark filter expression ( tcp.srcport == 21 || udp.srcport == 21 )
 
 ### Penyelesaian dan Dokumentasi Soal 4
-![FilterPaketNomor4](/image/Soal4.PNG)<br>
+![FilterPaketNomor4](/image/soal4.PNG)<br>
 Penjelasan : <br>
 Soal memerintahkan untuk mem-filter wireshark sehingga hanya mengambil paket yang berasal dari port 21. Sesuai dengan yang tertera pada modul 1, maka kita dapat menggunakan perintah src untuk menangkap semua paket yang berasal dari tempat yang diinginkan. <br>
 Pada soal nomer 4, digunakan perintah tcp.srcport == 21 || udp.srcport == 21 yang mana untuk tcp/udp merupakan detail dari protokol dimana paket ingin diambil atau ditangkap, <br>

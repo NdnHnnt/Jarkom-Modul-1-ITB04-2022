@@ -73,7 +73,7 @@ Nginx
 ### Penyelesaian dan Dokumentasi Soal 1
 1) Mengunduh _file_ `soal1-2.pcapng` dari tautan resource <br>
 2) Membuka program Wireshark untuk menganalisis _file_ yang didapatkan <br>
-3) Dilakukan filter `http` pada Wireshark.
+3) Dilakukan filter `http` pada Wireshark. <br>
 ![ProsesFilter](/image/Soal1-a.PNG) <br>
 4) Menelusuri paket yang didapatkan dengan melakukan klik kanan pada salah satu dan memilih "Follow HTTP"
 ![FollowHTTP](/image/Soal1-b.PNG) <br>
@@ -87,35 +87,52 @@ Tidak ada
 Ishaq sedang bingung mencari topik ta untuk semester ini , lalu ia datang ke website monta dan menemukan detail topik pada website “monta.if.its.ac.id” , judul TA apa yang dibuka oleh ishaq ?
 
 ### Jawaban Soal 2
-
+Topik Tugas Akhir: Evaluasi Unjuk Kerja User Space Filesystem
 
 ### Penyelesaian dan Dokumentasi Soal 2
+1) Dengan cara yang sama dengan nomor sebelumnya, Follow dilakukan dari paket
+`576	43.664770386	192.168.0.27	103.94.189.5	HTTP	1393	GET /index.php/topik/detailTopik/194 HTTP/1.1` <br>
+2) Dapat diketahui bahwa alamat yang dikunjungi adalah [http://monta.if.its.ac.id/index.php/topik/detailTopik/194](http://monta.if.its.ac.id/index.php/topik/detailTopik/194) <br>
+3) Tampilan dari ss-nya adalah <br>
+   ![LamanDetailTopik](/image/Soal2-a.PNG)<br>
+4) Karena title yang ada di bagian atas sepertinya bukan merupakan judul, kemungkinan besar judulnya adalah <br> “Topik Tugas Akhir: Evaluasi Unjuk Kerja User Space Filesystem”. Ditambah dengan deskripsi yang mengarah pada FUSE. <br>
+   ![PembuktianLaman](/image/Soal2-b.PNG)<br> 
+
 
 
 ### Kendala Soal 2
+Tidak ada
 
 ## Soal 3
 Filter sehingga wireshark hanya menampilkan paket yang menuju port 80! 
 
 ### Jawaban Soal 3
-
+wireshark filter expression( tcp.dstport == 80 || udp.dstport == 80)
 
 ### Penyelesaian dan Dokumentasi Soal 3
+![FilterPaketNomor3](/image/Soal3.PNG)<br>
+Penjelasan : <br>
+disini kita disuruh untuk memfilter whileshark  sehingga hanya menampilkan paket yang menuju port 80, <br>
+Disini kita menggunakan filter expression yaitu tcp.dstport == 80 || udp.dstport == 80 agar hanya menampilkan paket yang menuju port 80. <br>
+Disini juga ada yang mana untuk tcp/udp merupakan detail dari protokol dimana paket ingin diambil atau ditangkap lalu dst yang diartikan sebagai menuju ke port yang ditulis di soal yaitu port 80.
 
 
 ### Kendala Soal 3
-
+Tidak ada
 ## Soal 4
 Filter sehingga wireshark hanya mengambil paket yang berasal dari port 21! 
 
 ### Jawaban Soal 4
-
+Wireshark filter expression ( tcp.srcport == 21 || udp.srcport == 21 )
 
 ### Penyelesaian dan Dokumentasi Soal 4
-
-
+![FilterPaketNomor4](/image/Soal4.PNG)<br>
+Penjelasan : <br>
+Soal memerintahkan untuk mem-filter wireshark sehingga hanya mengambil paket yang berasal dari port 21. Sesuai dengan yang tertera pada modul 1, maka kita dapat menggunakan perintah src untuk menangkap semua paket yang berasal dari tempat yang diinginkan. <br>
+Pada soal nomer 4, digunakan perintah tcp.srcport == 21 || udp.srcport == 21 yang mana untuk tcp/udp merupakan detail dari protokol dimana paket ingin diambil atau ditangkap, <br>
+dilanjutkan dengan src seperti penjelasan sebelumnya, baru kemudian memasukkan detail tempat dimana paket ingin diambil, disini diperintahkan mengambil paket yang berasal dari port 21, maka digunakan perintah port == 21
 ### Kendala Soal 4
-
+Tidak ada
 ## Soal 5
 Filter sehingga wireshark hanya mengambil paket yang berasal dari port 443!
 

@@ -94,9 +94,9 @@ Topik Tugas Akhir: Evaluasi Unjuk Kerja User Space Filesystem
 `576	43.664770386	192.168.0.27	103.94.189.5	HTTP	1393	GET /index.php/topik/detailTopik/194 HTTP/1.1` <br>
 2) Dapat diketahui bahwa alamat yang dikunjungi adalah [http://monta.if.its.ac.id/index.php/topik/detailTopik/194](http://monta.if.its.ac.id/index.php/topik/detailTopik/194) <br>
 3) Tampilan dari ss-nya adalah <br>
-   ![image.png](/image/soal2-a.PNG)<br>
+   ![image/soal2-a.png](/image/soal2-a.PNG)<br>
 4) Karena title yang ada di bagian atas sepertinya bukan merupakan judul, kemungkinan besar judulnya adalah <br> “Topik Tugas Akhir: Evaluasi Unjuk Kerja User Space Filesystem”. Ditambah dengan deskripsi yang mengarah pada FUSE. <br>
-  ![image.png](/image/soal2-b.PNG)<br> 
+  ![image/soal2-b.png](/image/soal2-b.PNG)<br> 
 
 
 

@@ -168,13 +168,17 @@ Tidak ada
 Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!
 
 ### Jawaban Soal 7
+Wireshark filter expression ( ip.src == 192.168.100.32 )
 
 
 ### Penyelesaian dan Dokumentasi Soal 7
+![image](/image/soal7.png)<br>
+Penjelasan : <br>
+Disini kita disuruh memfilter while shark sehingga hanya mengambil paket yang berasal dari ip kita sendiri, disini kami menggunakan wireshark filter expression(ip.src == 192.168.100.32), yang mana disini  ada alamat ip  192.168.100.32 yang berasal dari saya yang dimana di tunjuk dari perintah soal di atas.
 
 
 ### Kendala Soal 7
-
+Tidak ada
 ## Soal 8
 Telusuri aliran paket dalam file .pcap yang diberikan, cari informasi berguna berupa percakapan antara dua mahasiswa terkait tindakan kecurangan pada kegiatan praktikum. Percakapan tersebut dilaporkan menggunakan protokol jaringan dengan tingkat keandalan yang tinggi dalam pertukaran datanya sehingga kalian perlu menerapkan filter dengan protokol yang tersebut.
 

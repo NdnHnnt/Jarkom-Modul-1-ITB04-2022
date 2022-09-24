@@ -137,6 +137,7 @@ Tidak ada
 Filter sehingga wireshark hanya mengambil paket yang berasal dari port 443!
 
 ### Jawaban Soal 5
+Wireshark filter expression ( tcp.srcport == 443 || udp.srcport == 443 )
 
 
 ### Penyelesaian dan Dokumentasi Soal 5

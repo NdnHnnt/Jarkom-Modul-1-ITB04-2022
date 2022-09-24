@@ -98,8 +98,6 @@ Topik Tugas Akhir: Evaluasi Unjuk Kerja User Space Filesystem
 4) Karena title yang ada di bagian atas sepertinya bukan merupakan judul, kemungkinan besar judulnya adalah <br> “Topik Tugas Akhir: Evaluasi Unjuk Kerja User Space Filesystem”. Ditambah dengan deskripsi yang mengarah pada FUSE. <br>
   ![image](/image/soal2-b.png)<br> 
 
-
-
 ### Kendala Soal 2
 Tidak ada
 
@@ -179,35 +177,73 @@ Disini kita disuruh memfilter while shark sehingga hanya mengambil paket yang be
 
 ### Kendala Soal 7
 Tidak ada
+
 ## Soal 8
 Telusuri aliran paket dalam file .pcap yang diberikan, cari informasi berguna berupa percakapan antara dua mahasiswa terkait tindakan kecurangan pada kegiatan praktikum. Percakapan tersebut dilaporkan menggunakan protokol jaringan dengan tingkat keandalan yang tinggi dalam pertukaran datanya sehingga kalian perlu menerapkan filter dengan protokol yang tersebut.
 
 ### Jawaban Soal 8
-
+Wireshark filter expression ( tcp.stream eq 12 || tcp.stream eq 41 || tcp.stream eq 90 )
 
 ### Penyelesaian dan Dokumentasi Soal 8
-
+1) Mengunduh _file_ `soal8-10.pcapng` dari tautan resource <br>
+2) Membuka program Wireshark untuk menganalisis _file_ yang didapatkan <br>
+3) Menelusuri paket yang didapatkan dengan melakukan klik kanan pada salah satu dan memilih "Follow TCP" <br>
+![FollowTCP](/image/soal8-a.PNG) <br>
+5) Melakukan pelacakan terhadap hasil terhadap paket yang didapatkan, di sini didapatkan bahwa ada percakapan pada stream 12, 41, dan 90 yang bersifat dua arah<br>
+![Stream 12](/image/soal8-b.PNG)<br>
+![Stream 41](/image/soal8-c.PNG)<br>
+![Stream 90](/image/soal8-d.PNG)<br>
 
 ### Kendala Soal 8
+Tidak ada
 
 ## Soal 9
 Terdapat laporan adanya pertukaran file yang dilakukan oleh kedua mahasiswa dalam percakapan yang diperoleh, carilah file yang dimaksud! Untuk memudahkan laporan kepada atasan, beri nama file yang ditemukan dengan format `[nama_kelompok].des3` dan simpan output file dengan nama `flag.txt`.
 
 ### Jawaban Soal 9
-
+Wireshark filter expression ( tcp.port == 9002) atau (tcp.stream eq 29)
 
 ### Penyelesaian dan Dokumentasi Soal 9
+> Clue yang didapatkan dari soal sebelumnya <br>
+Sumber dan Clue:
+- tcp.stream eq 12: Digunakan tools openssl dengan metode des3 untuk mendecrypt file menggunakan file salt
+- tcp.stream eq 12: Password mengunakan karakter dari anime kembar lima menggunakan huruf kecil
+- tcp.stream eq 12: File salt akan dikirimkan melalui port 9002
+- tcp.stream eq 41: Password tidak selamanya dari hal yang berbeda, merujuk pada karakter kembar lima
+- tcp.stream eq 90: Password merupakan yang terlihat sama dengan orang lain, merujuk kembali pada nama karakter kembar lima<br>
 
+1) Dari soal sebelumnya, didapatkan clue-clue sebagaimana yang dipaparkan di atas.
+2) Lalu, melacak _file_ salt yang dikirimkan melalui port 9002 dengan mengimplementasikan filter `tcp.port == 9002`<br>
+![Filter Port](/image/soal8-e.PNG)<br>
+3) Melanjutkan dengan mengeklik kanan lalu melakukan Follow TCP pada baris pertama dari hasil filter - yang kebetulan juga merupakan `tcp.stream eq 29` <br>
+![File Salt](/image/soal8-f.PNG)<br>
+4) Atas arahan soal, _file_ disimpan dalam format des3. Di mana karena akan didecrypt, format ASCII pada isi salt diubah dahulu menjadi raw.<br>
+![File DES3](/image/soal8-g.PNG)<br>
+5) Selanjutnya mencari tahu kata sandi atau _password_ dari DES3. Didapatkan bahwa kata sandi merupakan kesamaan karakter dari anime kembar lima. Di sini, kami mencari tahu dahulu apa judul dari anime tersebut dan mendapatkan bahwa judulnya ialah `5-toubun no Hanayome` atau `The Quintessential Quintuplets`. Di sini dicari tahu apa kesamaan dari karakter-karakter yang ada di anime ini. Kami mendapatkan bahwa nama keluarga dari kembar lima ini sama dan menggunakannya sebagai password<br>
+Sehingga, kata sandinya adalah `nakano`<br>
+![Gotoubun](/image/soal8-h.PNG)<br>
+6) Karena telah mengetahui kata sandinya, kami melakukan decrypt melalui openssl dengan perintah
+```
+openssl des3 -d -in ITB04.des3 -out flag.txt
+```
+7) Dengan demikian, _file_ `flag.txt` telah ada dan berisi hasil dari _decrypt_ DES3 sebelumnya<br>
+![Gotoubun](/image/soal8-i.jpg)<br>
 
 ### Kendala Soal 9
+Pada mekanismenya, kami menggunakan Wireshark di Windows lalu mengunggah laporan tersebut ke Google Drive pribadi agar dapat di-decrypt. Sayangnya, anggota kami yang bertugas dalam soal ini terkendala karena Kali Linux yang digunakannya secara tiba-tiba error dan tidak bisa mengakses internet meskipun sudah di-_restart_ berulang kali. Akan tetapi, kendala ini dapat diatasi karena untuk proses _decrypt_ sendiri dapat dilakukan menggunakan Ubuntu dari anggota kami yang lain dengan _file_ DES3 yang sebelumnya sudah diunggah melalui Google Drive pribadi kami.
+![Error](/image/error.jpg)<br>
 
 ## Soal 10
 Temukan password rahasia (flag) dari organisasi bawah tanah yang disebutkan di atas!
 
 ### Jawaban Soal 10
-
+JaRkOm2022{8uk4N_CtF_k0k_h3h3h3}
 
 ### Penyelesaian dan Dokumentasi Soal 10
-
+1) Melanjutkan langkah dari nomor sebelumnya, dilakukan perintah sebagai berikut untuk menampilkan Flag yang diminta pada soal ini.
+```
+cat flag.txt
+```
 
 ### Kendala Soal 10
+Tidak ada

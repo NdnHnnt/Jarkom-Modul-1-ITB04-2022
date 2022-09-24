@@ -141,7 +141,7 @@ Wireshark filter expression ( tcp.srcport == 443 || udp.srcport == 443 )
 
 
 ### Penyelesaian dan Dokumentasi Soal 5
-![image](/image/soal5.png)<br>
+![image](/image/soal5.jpg)<br>
 Penjelasan : <br>
 Soal memerintahkan untuk mem-filter Soal memerintahkan untuk mem-filter wireshark sehingga hanya mengambil paket yang berasal dari port 443. Hampir sama dengan soal nomor 4, maka tata cara pengerjaannya bisa disesuaikan, hanya perlu mengubah dari segi Port, diubah menjadi port == 443 . Hasil perintah lengkapnya adalah  tcp.srcport == 443 || udp.srcport == 443
 

@@ -244,6 +244,6 @@ JaRkOm2022{8uk4N_CtF_k0k_h3h3h3}
 ```
 cat flag.txt
 ```
-
+![Decrypt](/image/soal8-i.jpg)<br>
 ### Kendala Soal 10
 Tidak ada

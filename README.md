@@ -188,11 +188,11 @@ Wireshark filter expression ( tcp.stream eq 12 || tcp.stream eq 41 || tcp.stream
 1) Mengunduh _file_ `soal8-10.pcapng` dari tautan resource <br>
 2) Membuka program Wireshark untuk menganalisis _file_ yang didapatkan <br>
 3) Menelusuri paket yang didapatkan dengan melakukan klik kanan pada salah satu dan memilih "Follow TCP" <br>
-![FollowTCP](/image/soal8-a.PNG) <br>
+![FollowTCP](/image/soal8-a.png) <br>
 5) Melakukan pelacakan terhadap hasil terhadap paket yang didapatkan, di sini didapatkan bahwa ada percakapan pada stream 12, 41, dan 90 yang bersifat dua arah<br>
-![Stream 12](/image/soal8-b.PNG)<br>
-![Stream 41](/image/soal8-c.PNG)<br>
-![Stream 90](/image/soal8-d.PNG)<br>
+![Stream 12](/image/soal8-b.png)<br>
+![Stream 41](/image/soal8-c.png)<br>
+![Stream 90](/image/soal8-d.png)<br>
 
 ### Kendala Soal 8
 Tidak ada
@@ -214,14 +214,14 @@ Sumber dan Clue:
 
 1) Dari soal sebelumnya, didapatkan clue-clue sebagaimana yang dipaparkan di atas.
 2) Lalu, melacak _file_ salt yang dikirimkan melalui port 9002 dengan mengimplementasikan filter `tcp.port == 9002`<br>
-![Filter Port](/image/soal8-e.PNG)<br>
+![Filter Port](/image/soal8-e.png)<br>
 3) Melanjutkan dengan mengeklik kanan lalu melakukan Follow TCP pada baris pertama dari hasil filter - yang kebetulan juga merupakan `tcp.stream eq 29` <br>
-![File Salt](/image/soal8-f.PNG)<br>
+![File Salt](/image/soal8-f.png)<br>
 4) Atas arahan soal, _file_ disimpan dalam format des3. Di mana karena akan didecrypt, format ASCII pada isi salt diubah dahulu menjadi raw.<br>
-![File DES3](/image/soal8-g.PNG)<br>
+![File DES3](/image/soal8-g.png)<br>
 5) Selanjutnya mencari tahu kata sandi atau _password_ dari DES3. Didapatkan bahwa kata sandi merupakan kesamaan karakter dari anime kembar lima. Di sini, kami mencari tahu dahulu apa judul dari anime tersebut dan mendapatkan bahwa judulnya ialah `5-toubun no Hanayome` atau `The Quintessential Quintuplets`. Di sini dicari tahu apa kesamaan dari karakter-karakter yang ada di anime ini. Kami mendapatkan bahwa nama keluarga dari kembar lima ini sama dan menggunakannya sebagai password<br>
 Sehingga, kata sandinya adalah `nakano`<br>
-![Gotoubun](/image/soal8-h.PNG)<br>
+![Gotoubun](/image/soal8-h.png)<br>
 6) Karena telah mengetahui kata sandinya, kami melakukan decrypt melalui openssl dengan perintah
 ```
 openssl des3 -d -in ITB04.des3 -out flag.txt

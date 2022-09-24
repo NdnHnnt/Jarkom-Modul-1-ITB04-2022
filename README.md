@@ -151,12 +151,18 @@ Tidak ada
 Filter sehingga wireshark hanya menampilkan paket yang menuju ke lipi.go.id !
 
 ### Jawaban Soal 6
+Wireshark filter expression ( http.host==lipi.go.id )
 
 
 ### Penyelesaian dan Dokumentasi Soal 6
+![image](/image/soal6.jpg)<br>
+Penjelasan : <br>
+Pada soal nomor 6 ini kita diminta untuk mem-filter wireshark agar menampilkan paket yang menuju ke lipi.go.id . Maka sesuai modul 1 kita bisa menggunakan perintah host untuk menampilkan paket yang menuju ke alamat yang diinginkan. Disini karena alamat yang diperintahkan adalah lipi.go.id, <br>
+maka perintah yang digunakan adalah host==lipi.go.id . Kemudian pada bagian depan perintah http untuk mem-filter paket yang berasal/menuju yang menggunakan protokol HTTP. Hasil perintah lengkapnya adalah http.host==lipi.go.id
 
 
 ### Kendala Soal 6
+Tidak ada
 
 ## Soal 7
 Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!
